@@ -1,14 +1,14 @@
-import { defineStep } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 
-defineStep("I open the example page", () => {
+Given("I open the example page", () => {
     cy.visit("https://www.example.com");
 });
 
-defineStep("I see page title {string}", (name) => {
+Then("I see page title {string}", (name) => {
     cy.get("h1").should("be.visible");
     cy.get("h1").should("contain", `${name}`);
 });
 
-defineStep("I see text", () => {
+And("I see text", () => {
     cy.get("p").should("be.visible");
 });
