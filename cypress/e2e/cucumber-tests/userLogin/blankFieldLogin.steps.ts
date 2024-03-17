@@ -9,8 +9,8 @@ When("I enter my password and leave the email field empty", () => {
 });
 
 Then("I should see an error message indicating email can't be blank", () => {
-    cy.shouldExist(".error-messages");
-    cy.checkTextContent(".error-messages > li", "email can't be blank");
+    cy.shouldExist(":nth-child(2) > .text-sm");
+    cy.checkTextContent(":nth-child(2) > .text-sm", "Email is required");
 });
 
 When("I enter my email and leave the password field empty", () => {
@@ -20,6 +20,6 @@ When("I enter my email and leave the password field empty", () => {
 });
 
 Then("I should see an error message indicating password can't be blank", () => {
-    cy.shouldExist(".error-messages");
-    cy.checkTextContent(".error-messages > li", "password can't be blank");
+    cy.shouldExist(":nth-child(4) .text-sm");
+    cy.checkTextContent(":nth-child(4) .text-sm", "Password is required");
 });

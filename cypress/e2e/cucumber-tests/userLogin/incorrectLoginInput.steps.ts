@@ -17,10 +17,7 @@ When("I enter my email and an incorrect password", () => {
 Then(
     "I should see an error message indicating the email or password is incorrect",
     () => {
-        cy.shouldExist(".error-messages");
-        cy.checkTextContent(
-            ".error-messages > li",
-            "email or password is invalid"
-        );
+        cy.shouldExist(".my-2 > .flex");
+        cy.checkTextContent(".ml-2", "Bad Credentials");
     }
 );

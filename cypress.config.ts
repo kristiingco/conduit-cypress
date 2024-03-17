@@ -12,7 +12,7 @@ export default defineConfig({
 
             on("file:preprocessor", cucumber(options));
         },
-        baseUrl: "http://localhost:4100/",
+        baseUrl: "http://localhost:3000/",
         specPattern: "cypress/e2e/cucumber-tests/*.feature",
     },
     video: false,

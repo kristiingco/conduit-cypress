@@ -14,8 +14,8 @@ When(
 Then(
     "I should see an error message indicating the username can't be blank",
     () => {
-        cy.shouldExist(".error-messages");
-        cy.checkTextContent(".error-messages > li", "username can't be blank");
+        cy.shouldExist(":nth-child(2) > .text-sm");
+        cy.checkTextContent(":nth-child(2) > .text-sm", "Username is required");
     }
 );
 
@@ -31,8 +31,8 @@ When(
 Then(
     "I should see an error message indicating the email can't be blank",
     () => {
-        cy.shouldExist(".error-messages");
-        cy.checkTextContent(".error-messages > li", "email can't be blank");
+        cy.shouldExist(":nth-child(4) > .text-sm");
+        cy.checkTextContent(":nth-child(4) > .text-sm", "Email is required");
     }
 );
 
@@ -48,7 +48,7 @@ When(
 Then(
     "I should see an error message indicating the password can't be blank",
     () => {
-        cy.shouldExist(".error-messages");
-        cy.checkTextContent(".error-messages > li", "password can't be blank");
+        cy.shouldExist(":nth-child(6) > .text-sm");
+        cy.checkTextContent(":nth-child(6) > .text-sm", "Password is required");
     }
 );

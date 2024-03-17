@@ -20,11 +20,8 @@ When(
 Then(
     "I should see an error message indicating the email is already taken",
     () => {
-        cy.shouldExist(".error-messages");
-        cy.checkTextContent(
-            ".error-messages > li",
-            "email has already been taken"
-        );
+        cy.shouldExist(".my-2 > .flex");
+        cy.checkTextContent(".my-2 > .flex", "Username or email had been used");
     }
 );
 
@@ -42,10 +39,7 @@ When(
 Then(
     "I should see an error message indicating the username is already taken",
     () => {
-        cy.shouldExist(".error-messages");
-        cy.checkTextContent(
-            ".error-messages > li",
-            "username has already been taken"
-        );
+        cy.shouldExist(".my-2 > .flex");
+        cy.checkTextContent(".my-2 > .flex", "Username or email had been used");
     }
 );

@@ -20,14 +20,9 @@ And("I click the Sign up button", () => {
     cy.clickSignUpButton();
 });
 
-Then("I should be taken to the login page", () => {
-    cy.url().should("contain", "login");
-});
-
-And("I am taken to the home page as a logged in user after logging in", () => {
-    cy.clickSignInButton();
+Then("I am taken to the home page as a logged in user", () => {
     cy.url().should("equal", Cypress.config("baseUrl"));
     cy.fixture("registerData").then(({ username }) => {
-        cy.checkTextContent(":nth-child(4) > .nav-link", username);
+        cy.checkTextContent(":nth-child(4) > .block", username);
     });
 });

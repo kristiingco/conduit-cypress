@@ -20,6 +20,6 @@ Then("I am taken to the home page as a logged in user after logging in", () => {
     cy.clickSignInButton();
     cy.url().should("equal", Cypress.config("baseUrl"));
     cy.fixture("loginData").then(({ username }) => {
-        cy.checkTextContent(":nth-child(4) > .nav-link", username);
+        cy.checkTextContent(":nth-child(4) > .block", username);
     });
 });
