@@ -10,3 +10,4 @@ Feature: Article Publishing
         And I enter the title, description, content, and tags of my article
         And I click the Publish Article button
         Then The article should be published 
+        And The article should be on my profile

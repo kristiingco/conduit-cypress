@@ -31,3 +31,12 @@ Then("The article should be published", () => {
         cy.tagsInclude(tags);
     });
 });
+
+And("The article should be on my profile", () => {
+    cy.clickOnProfile();
+    cy.fixture("articleData").then(({ title, description, tags }) => {
+        cy.articleOnProfileTitleEquals(title);
+        cy.articleOnProfileDescriptionEquals(description);
+        cy.articleOnProfileTagsInclude(tags);
+    });
+});
