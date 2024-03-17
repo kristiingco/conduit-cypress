@@ -21,3 +21,16 @@ Feature: User Login
         When I enter my email and an incorrect password
         And I click the Sign in button 
         Then I should see an error message indicating the email or password is incorrect
+
+    Scenario: Logging in with no email provided
+        Given I am on the login page
+        When I enter my password and leave the email field empty
+        And I click the Sign in button
+        Then I should see an error message indicating email can't be blank
+
+    Scenario: Logging in with no password provided
+        Given I am on the login page
+        When I enter my email and leave the password field empty
+        And I click the Sign in button
+        Then I should see an error message indicating password can't be blank
+
