@@ -17,6 +17,8 @@
 import "./commands";
 import "./loginActions";
 import "./registerActions";
+import "./writeArticleActions";
+import "./viewArticleActions";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

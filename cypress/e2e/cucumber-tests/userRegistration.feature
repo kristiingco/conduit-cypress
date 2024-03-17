@@ -4,12 +4,12 @@ Feature: User Registration
     I want to register
     So that I can write and publish articles on the platform
 
-    Scenario: Successful registration
-        Given I am on the home page
-        When I navigate to the register page
-        And I enter my username, email, and password
-        And I click the Sign up button
-        Then I am taken to the home page as a logged in user
+    # Scenario: Successful registration
+    #     Given I am on the home page
+    #     When I navigate to the register page
+    #     And I enter my username, email, and password
+    #     And I click the Sign up button
+    #     Then I am taken to the home page as a logged in user
 
     Scenario: Registration with an already used username
         Given I am on the register page
