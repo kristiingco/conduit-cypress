@@ -1,5 +1,7 @@
 {
     "username": "jd2",
     "email": "jd2@email.com",
-    "password": "Password123!"
+    "password": "Password123!",
+    "incorrectEmail": "jd100@email.com",
+    "incorrectPassword": "PasswordABC!"
 }

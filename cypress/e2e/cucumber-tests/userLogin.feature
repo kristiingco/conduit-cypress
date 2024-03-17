@@ -9,3 +9,15 @@ Feature: User Login
         When I enter my valid email and password
         And I click the Sign in button 
         Then I am taken to the home page as a logged in user after logging in
+    
+    Scenario: Logging in with incorrect email
+        Given I am on the login page
+        When I enter an incorrect email and my password
+        And I click the Sign in button 
+        Then I should see an error message indicating the email or password is incorrect
+    
+    Scenario: Logging in with incorrect password
+        Given I am on the login page
+        When I enter my email and an incorrect password
+        And I click the Sign in button 
+        Then I should see an error message indicating the email or password is incorrect
