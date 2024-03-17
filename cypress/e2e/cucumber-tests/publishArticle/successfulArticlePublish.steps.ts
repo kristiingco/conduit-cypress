@@ -24,7 +24,7 @@ And("I click the Publish Article button", () => {
     cy.clickPublishArticleButton();
 });
 
-And("The article should be published", () => {
+Then("The article should be published", () => {
     cy.fixture("articleData").then(({ title, body, tags }) => {
         cy.titleEquals(title);
         cy.bodyEquals(body);
