@@ -33,4 +33,10 @@ Feature: User Login
         When I enter my email and leave the password field empty
         And I click the Sign in button
         Then I should see an error message indicating password can't be blank
+    
+    Scenario: Successful logout
+        Given I am logged in
+        When I navigate to the settings page
+        And I click the Log out button 
+        Then I should be redirected to the login page
 
