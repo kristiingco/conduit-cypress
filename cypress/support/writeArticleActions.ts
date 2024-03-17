@@ -13,6 +13,13 @@ declare namespace Cypress {
         ): Chainable<Element>;
 
         /**
+         * Fill in specified fields of the article editor form
+         *
+         * @param fields - takes object with field name as key and the desired input to type as value
+         */
+        fillInSpecificArticleFields(fields: object): Chainable<Element>;
+
+        /**
          * Clicks on New Article nav link
          */
         clickNewArticle(): Chainable<Element>;
@@ -40,3 +47,5 @@ Cypress.Commands.add("clickNewArticle", () => {
 Cypress.Commands.add("clickPublishArticleButton", () => {
     cy.contains("button", "Publish Article").click();
 });
+
+Cypress.Commands.add("fillInSpecificArticleFields", () => {});

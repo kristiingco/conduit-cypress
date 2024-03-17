@@ -6,7 +6,7 @@ When(
     "I do not enter a username while the rest of the fields are filled in appropriately",
     () => {
         cy.fixture("registerData").then(({ email, password }) => {
-            cy.fillInFields({ Email: email, Password: password });
+            cy.fillInSpecificFields({ Email: email, Password: password });
         });
     }
 );
@@ -23,7 +23,7 @@ When(
     "I do not enter an email while the rest of the fields are filled in appropriately",
     () => {
         cy.fixture("registerData").then(({ username, password }) => {
-            cy.fillInFields({ Username: username, Password: password });
+            cy.fillInSpecificFields({ Username: username, Password: password });
         });
     }
 );
@@ -40,7 +40,7 @@ When(
     "I do not enter a password while the rest of the fields are filled in appropriately",
     () => {
         cy.fixture("registerData").then(({ username, email }) => {
-            cy.fillInFields({ Username: username, Email: email });
+            cy.fillInSpecificFields({ Username: username, Email: email });
         });
     }
 );

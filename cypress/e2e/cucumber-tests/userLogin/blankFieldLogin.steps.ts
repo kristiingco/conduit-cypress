@@ -4,7 +4,7 @@ import { When, Then } from "cypress-cucumber-preprocessor/steps";
 
 When("I enter my password and leave the email field empty", () => {
     cy.fixture("loginData").then(({ password }) => {
-        cy.fillInFields({ Password: password });
+        cy.fillInSpecificFields({ Password: password });
     });
 });
 
@@ -15,7 +15,7 @@ Then("I should see an error message indicating email can't be blank", () => {
 
 When("I enter my email and leave the password field empty", () => {
     cy.fixture("loginData").then(({ email }) => {
-        cy.fillInFields({ Email: email });
+        cy.fillInSpecificFields({ Email: email });
     });
 });
 
