@@ -18,5 +18,10 @@ Feature: User Registration
         And I click the Sign up button
         Then I should see an error message indicating the username is already taken
 
+    Scenario: Registration with an already used email
+        Given I am on the register page
+        When I enter an email that is already in use while the rest of the fields are filled in appropriately
+        And I click the Sign up button
+        Then I should see an error message indicating the email is already taken
 
     
