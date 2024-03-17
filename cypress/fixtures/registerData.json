@@ -1,5 +1,9 @@
 {
-    "username": "jd5",
-    "email": "jd5@email.com",
-    "password": "Password123!"
+    "username": "jd6",
+    "email": "jd6@email.com",
+    "password": "Password123!",
+    "takenUsername": "jd2",
+    "takenEmail": "jd2@email.com",
+    "nonTakenUsername": "jd100",
+    "nonTakenEmail": "jd100@email.com"
 }
