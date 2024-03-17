@@ -4,6 +4,7 @@ Feature: User Registration
     I want to register
     So that I can write and publish articles on the platform
 
+    # TODO: Uncomment near test completion
     # Scenario: Successful registration
     #     Given I am on the home page
     #     When I navigate to the register page
@@ -23,5 +24,17 @@ Feature: User Registration
         When I enter an email that is already in use while the rest of the fields are filled in appropriately
         And I click the Sign up button
         Then I should see an error message indicating the email is already taken
+
+    Scenario: Registration with no email provided
+        Given I am on the register page
+        When I do not enter an email while the rest of the fields are filled in appropriately
+        And I click the Sign up button
+        Then I should see an error message indicating the email can't be blank
+
+    Scenario: Registration with no password provided
+        Given I am on the register page
+        When I do not enter a password while the rest of the fields are filled in appropriately
+        And I click the Sign up button
+        Then I should see an error message indicating the password can't be blank
 
     

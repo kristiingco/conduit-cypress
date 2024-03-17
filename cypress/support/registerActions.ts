@@ -16,6 +16,13 @@ declare namespace Cypress {
         ): Chainable<Element>;
 
         /**
+         * Fill in specified fields of the register form
+         *
+         * @param fields - takes object with field name as key and the desired input to type as value
+         */
+        fillInFields(fields: object): Chainable<Element>;
+
+        /**
          * Clicks on the sign up button of the register form
          */
         clickSignUpButton(): Chainable<Element>;
@@ -26,6 +33,12 @@ Cypress.Commands.add("fillRegisterForm", (username, email, password) => {
     cy.get("[placeholder='Username']").type(username);
     cy.get("[placeholder='Email']").type(email);
     cy.get("[placeholder='Password']").type(password);
+});
+
+Cypress.Commands.add("fillInFields", (fields) => {
+    for (const field in fields) {
+        cy.get(`[placeholder='${field}']`).type(fields[field]);
+    }
 });
 
 Cypress.Commands.add("clickSignUpButton", () => {
