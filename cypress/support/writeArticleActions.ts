@@ -3,7 +3,12 @@
 declare namespace Cypress {
     interface Chainable {
         /**
-         * Clicks on the sign in button of the register form
+         * Fills in the form of the article editor
+         *
+         * @param title - takes in article title
+         * @param description - takes in article description
+         * @param body - takes in article content
+         * @param tags - takes in article tags
          */
         fillArticleEditor(
             title: string,
@@ -40,6 +45,26 @@ Cypress.Commands.add("fillArticleEditor", (title, description, body, tags) => {
     });
 });
 
+Cypress.Commands.add("fillInSpecificArticleFields", (fields) => {
+    for (const field in fields) {
+        switch (field) {
+            case "description":
+                cy.get(`[placeholder="What's this article about?"]`).type(
+                    fields[field]
+                );
+                break;
+            case "tags":
+                fields[field].forEach((tag: string) => {
+                    cy.get("[placeholder='Enter tags']").type(`${tag}{enter}`);
+                });
+                break;
+            default:
+                cy.get(`[name='${field}']`).type(fields[field]);
+                break;
+        }
+    }
+});
+
 Cypress.Commands.add("clickNewArticle", () => {
     cy.contains("New Article").click();
 });
@@ -47,5 +72,3 @@ Cypress.Commands.add("clickNewArticle", () => {
 Cypress.Commands.add("clickPublishArticleButton", () => {
     cy.contains("button", "Publish Article").click();
 });
-
-Cypress.Commands.add("fillInSpecificArticleFields", () => {});
