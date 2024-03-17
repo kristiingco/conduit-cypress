@@ -25,6 +25,12 @@ Feature: User Registration
         And I click the Sign up button
         Then I should see an error message indicating the email is already taken
 
+    Scenario: Registration with no username provided
+        Given I am on the register page
+        When I do not enter a username while the rest of the fields are filled in appropriately
+        And I click the Sign up button
+        Then I should see an error message indicating the username can't be blank
+
     Scenario: Registration with no email provided
         Given I am on the register page
         When I do not enter an email while the rest of the fields are filled in appropriately
