@@ -17,6 +17,7 @@
 import "./commands";
 import "./loginActions";
 import "./registerActions";
+import "./homePageActions";
 import "./writeArticleActions";
 import "./viewArticleActions";
 import "./viewProfileActions";

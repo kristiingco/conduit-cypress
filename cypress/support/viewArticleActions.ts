@@ -3,6 +3,11 @@
 declare namespace Cypress {
     interface Chainable {
         /**
+         * Clicks on an article on the global feed to view it
+         */
+        clickArticle(): Chainable<Element>;
+
+        /**
          * Checks if article title is equal to a given string
          *
          * @param title - takes in a string to compare to article title
@@ -24,6 +29,10 @@ declare namespace Cypress {
         tagsInclude(tags: string[]): Chainable<Element>;
     }
 }
+
+Cypress.Commands.add("clickArticle", () => {
+    cy.get("ul.divide-y > li:last-child").click();
+});
 
 Cypress.Commands.add("titleEquals", (title) => {
     cy.get("h1").invoke("text").should("equal", title);
