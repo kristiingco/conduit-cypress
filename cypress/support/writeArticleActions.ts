@@ -33,18 +33,6 @@ declare namespace Cypress {
          * Clicks on Publish Article button
          */
         clickPublishArticleButton(): Chainable<Element>;
-
-        /**
-         * Types in a comment in the comment box
-         *
-         * @param comment - takes in comment
-         */
-        fillComment(comment: string): Chainable<Element>;
-
-        /**
-         * Clicks on Post Comment button
-         */
-        clickPostCommentButton(): Chainable<Element>;
     }
 }
 
@@ -83,12 +71,4 @@ Cypress.Commands.add("clickNewArticle", () => {
 
 Cypress.Commands.add("clickPublishArticleButton", () => {
     cy.contains("button", "Publish Article").click();
-});
-
-Cypress.Commands.add("fillComment", (comment) => {
-    cy.get("[name='body']").type(comment);
-});
-
-Cypress.Commands.add("clickPostCommentButton", () => {
-    cy.contains("button", "Post Comment").click();
 });
