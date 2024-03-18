@@ -14,4 +14,9 @@ Feature: Commenting on Articles
         Given I am viewing an article
         When I do not enter any text in the comment box
         Then The Post Comment button should be disabled
-
+    
+    Scenario: Successfully deleting a comment
+        Given I am viewing an article with my comment
+        When I click the delete button on my comment
+        Then My comment should be removed from the article
+   
