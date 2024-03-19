@@ -39,6 +39,11 @@ declare namespace Cypress {
          * Clicks on Post Comment button
          */
         clickPostCommentButton(): Chainable<Element>;
+
+        /**
+         * Clicks on Favorite button
+         */
+        clickFavoriteButton(): Chainable<Element>;
     }
 }
 
@@ -66,4 +71,8 @@ Cypress.Commands.add("fillComment", (comment) => {
 
 Cypress.Commands.add("clickPostCommentButton", () => {
     cy.contains("button", "Post Comment").click();
+});
+
+Cypress.Commands.add("clickFavoriteButton", () => {
+    cy.contains("button", "Favorite").eq(0).click();
 });
