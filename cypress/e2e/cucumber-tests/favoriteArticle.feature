@@ -15,3 +15,10 @@ Feature: Favoriting Articles
     When I navigate to my profile
     And I click on the Favorited Articles tab
     Then I should see a list of all my favorited articles
+
+Scenario: Unfavoriting an article
+    Given I am logged in
+    And I am on the Favorited Articles tab in my profile
+    When I click the unfavorite button on an article
+    Then The article should be removed from my favorites list
+
