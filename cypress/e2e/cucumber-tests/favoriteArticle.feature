@@ -9,3 +9,9 @@ Feature: Favoriting Articles
     When I click the favorite button on the article
     Then The button should become an Unfavorite button
     And The article should be marked as favorited
+
+ Scenario: Viewing my favorite articles on my profile
+    Given I am logged in
+    When I navigate to my profile
+    And I click on the Favorited Articles tab
+    Then I should see a list of all my favorited articles

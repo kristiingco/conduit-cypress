@@ -8,6 +8,11 @@ declare namespace Cypress {
         clickOnProfile(): Chainable<Element>;
 
         /**
+         * Click on Favorited Articlea tab to see favorited articles
+         */
+        clickOnFavoritedArticles(): Chainable<Element>;
+
+        /**
          * Checks if article title is equal to a given string
          *
          * @param title - takes in a string to compare to article title
@@ -34,6 +39,10 @@ declare namespace Cypress {
 
 Cypress.Commands.add("clickOnProfile", () => {
     cy.get(":nth-child(4) > .block").click();
+});
+
+Cypress.Commands.add("clickOnFavoritedArticles", () => {
+    cy.contains("Favorited Articles").click();
 });
 
 Cypress.Commands.add("articleOnProfileTitleEquals", (title) => {
