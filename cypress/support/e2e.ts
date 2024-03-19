@@ -20,7 +20,8 @@ import "./registerActions";
 import "./homePageActions";
 import "./writeArticleActions";
 import "./viewArticleActions";
-import "./viewProfileActions";
+import "./viewMyProfileActions";
+import "./viewOtherProfileActions";
 import "./settingsActions";
 
 // Alternatively you can use CommonJS syntax:
