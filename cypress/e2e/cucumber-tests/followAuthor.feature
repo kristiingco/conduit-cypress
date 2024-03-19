@@ -10,3 +10,11 @@ Feature: Follow User
     When I click the follow button
     Then The follow button should change to an unfollow button
     And Their articles appear on my feed
+
+    Scenario: Unfollowing a user
+    Given I am logged in
+    And I am on the profile page of a user I am already following
+    When I click the unfollow button
+    Then The unfollow button should change to a follow button
+    And Their articles no longer appear on my feed
+    
