@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { When, Then, And } from "cypress-cucumber-preprocessor/steps";
+import { When, Then } from "cypress-cucumber-preprocessor/steps";
 
 When("I am on the Favorited Articles tab in my profile", () => {
     cy.clickOnProfile();
